@@ -1,0 +1,15 @@
+{
+  "name": "gh-actions-url-health-check",
+  "version": "1.0.0",
+  "description": "GitHub Action for checking the health of a URL",
+  "main": "healthcheck.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "author": "appatalks",
+  "license": "MIT",
+  "dependencies": {
+    "https": "^1.0.0",
+    "puppeteer": "^13.0.1"
+  }
+}
