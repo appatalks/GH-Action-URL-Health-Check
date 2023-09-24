@@ -76,7 +76,7 @@ jobs:
       - name: Create Issue on Failure
         if: failure()
         id: createissue
-        uses: actions/github-script@0.8.0
+        uses: actions/github-script@v6.4.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
