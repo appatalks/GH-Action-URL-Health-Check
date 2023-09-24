@@ -8,11 +8,27 @@ This GitHub Action monitors the health of a specified URL and takes automated ac
 
 ## Usage
 
+### As a reusable workflow
+
+```yml
+name: URL Health Cheack
+on:
+  schedule:
+  - cron: 0/5 0 * * *
+jobs:
+  check_url_health:
+     uses: appatalks/GH-Action-URL-Health-Check/.github/workflows/healthcheck.yml@main
+     with:
+        url: https://example.com/
+```
+
+### Clone and Roll your own
+
 To use this GitHub Action, follow these steps:
 
 1. **Add the Workflow File**
 
-   Create a `.github/workflows/url_health_check.yml` file in your repository with the following content:
+   Create a `.github/workflows/healthcheck.yml` file in your repository with the following content:
 
    You can copy the example workflow file from the [GitHub repository here](https://github.com/appatalks/GH-Action-URL-Health-Check/blob/main/.github/workflows/healthcheck.yml). 
 
