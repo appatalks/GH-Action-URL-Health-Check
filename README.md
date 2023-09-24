@@ -14,7 +14,7 @@ This GitHub Action monitors the health of a specified URL and takes automated ac
 name: URL Health Cheack
 on:
   schedule:
-  - cron: 0/5 0 * * *
+  - cron: 0/5 * * * *
 jobs:
   check_url_health:
      uses: appatalks/GH-Action-URL-Health-Check/.github/workflows/healthcheck.yml@main
