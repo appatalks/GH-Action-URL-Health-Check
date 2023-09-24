@@ -6,9 +6,14 @@
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0"
   },
+  "repoitory": {
+    "type": "git",
+    "url": "git+https://github.com/appatalks/GH-Action-URL-Health-Check.git"
+  },
   "author": "appatalks",
   "license": "MIT",
   "dependencies": {
+    "@actions/core": "^1.2.5",
     "https": "^1.0.0",
     "puppeteer": "^13.0.1"
   }
