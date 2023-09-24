@@ -54,7 +54,7 @@ jobs:
           fi 
 
       - name: Upload screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
             name: screenshot
