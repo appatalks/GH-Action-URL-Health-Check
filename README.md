@@ -31,7 +31,7 @@ To use this GitHub Action, follow these steps:
    If the health check fails (returns a status code other than 200), the workflow will:
 
    - Capture a screenshot of the URL.
-   - Create a GitHub issue with details about the failure, including the status code and a link to the screenshot.
+   - Create a GitHub issue with details about the failure, including the status code and screenshot of the URL.
 
    You can then investigate and resolve the issue accordingly.
 
