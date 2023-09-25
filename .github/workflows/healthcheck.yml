@@ -12,7 +12,7 @@ on:
     
   workflow_call:
     inputs:
-      URL_TO_CHECK:
+      url:
         required: true
         type: string
 
