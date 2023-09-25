@@ -13,9 +13,7 @@ on:
   workflow_call:
     inputs:
       url:
-        description: 'URL to check'
-        required: false
-        default: 'https://example.com/' # Default URL, change as needed
+        required: true
         type: string
 
 jobs:
