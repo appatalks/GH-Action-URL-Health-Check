@@ -14,12 +14,18 @@ This GitHub Action monitors the health of a specified URL and takes automated ac
 name: URL Health Cheack
 on:
   schedule:
-  - cron: 0/5 * * * *
+  - cron: '0/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to check'
+        required: true
+        default: 'https://example.com'
 jobs:
-  check_url_health:
+  call_url_wf:
      uses: appatalks/GH-Action-URL-Health-Check/.github/workflows/healthcheck.yml@main
      with:
-        url: https://example.com/
+       url: ${{ inputs.url }}
 ```
 
 ### Clone and Roll your own
