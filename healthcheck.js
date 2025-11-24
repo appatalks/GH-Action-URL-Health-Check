@@ -3,7 +3,12 @@ const { exec } = require('child_process');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-const urlToCheck = process.env.URL_TO_CHECK;
+let urlToCheck = process.env.URL_TO_CHECK;
+
+// Ensure URL has protocol prefix
+if (urlToCheck && !urlToCheck.startsWith('http://') && !urlToCheck.startsWith('https://')) {
+  urlToCheck = 'https://' + urlToCheck;
+}
 
 const options = {
   headers: {
@@ -44,13 +49,21 @@ async function run() {
   console.log(`Status Code: ${statusCode}`);
   console.log(`Failed: ${failed}`);
 
+  // Always capture screenshot
+  try {
+    await captureScreenshot(urlToCheck);
+    console.log('Screenshot captured successfully');
+  } catch (err) {
+    console.error('Failed to capture screenshot:', err.message);
+  }
+
+  // Always write status code file
+  fs.writeFileSync('STATUS_CODE.txt', statusCode.toString());
+
   if (failed) {
     console.error(`Health check failed for URL: ${urlToCheck}`);
     console.error(`Status Code: ${statusCode}`);
-
-    await captureScreenshot(urlToCheck);
     
-    fs.writeFileSync('STATUS_CODE.txt', statusCode.toString());
     fs.writeFileSync('FAILED_URLS.txt', urlToCheck);
     
     process.exit(1);
