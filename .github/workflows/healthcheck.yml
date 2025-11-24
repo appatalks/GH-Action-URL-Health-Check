@@ -64,17 +64,4 @@ jobs:
         if: always()
         with:
             name: screenshot
-            path: screenshot.png    
-
-      - name: git upload
-        env: 
-          CI_COMMIT_AUTHOR: GitHub-Bot
-          CI_COMMIT_EMAIL: ${{ secrets.EMAIL }}
-        if: failure()
-        run: |
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
-          git checkout -b assets
-          git add screenshot.png
-          git commit -m "screenshot added"
-          git push origin assets --force
+            path: screenshot.png
