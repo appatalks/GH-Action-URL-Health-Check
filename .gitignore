@@ -1,0 +1,10 @@
+# Generated during action runs
+screenshot.png
+STATUS_CODE.txt
+FAILED_URLS.txt
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
