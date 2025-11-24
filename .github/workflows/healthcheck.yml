@@ -50,7 +50,7 @@ jobs:
           URL_TO_CHECK: ${{ github.event.inputs.url_to_check }}  
 
       - name: Debug Screenshot File
-        if: failure()
+        if: always()
         run: |
           if [ -f screenshot.png ]; then
             echo "Screenshot file exists."
@@ -61,7 +61,7 @@ jobs:
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with:
             name: screenshot
             path: screenshot.png    
