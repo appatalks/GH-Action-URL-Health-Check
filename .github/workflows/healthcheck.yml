@@ -109,7 +109,7 @@ jobs:
             `;
 
             // Create the issue with the modified body
-            const issue = await github.issues.create({
+            const issue = await github.rest.issues.create({
               owner,
               repo,
               title: 'URL Health Check Failure',
