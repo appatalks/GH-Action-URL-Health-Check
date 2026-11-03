@@ -6,5 +6,5 @@ inputs:
     description: 'URL to Monitor'
     required: true
 runs:
-  using: 'node16'
+  using: 'node24'
   main: 'healthcheck.js'
